@@ -1,0 +1,7 @@
+<library path="lib/libradar_server_nodelet">
+  <class name="radar_server/RadarServerNodelet" type="radar_server::RadarServerNodelet" base_class_type="nodelet::Nodelet">
+    <description> 
+      A nodelet wrapper for the radar_server.
+    </description>
+  </class>
+</library>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>radar_server</name>
+  <version>0.0.1</version>
+  <description>The radar_server package</description>
+  <maintainer email="j.j.g.dupeyroux@tudelft.nl">Julien Dupeyroux</maintainer>
+  <maintainer email="federico.corradi@imec.nl">Federico Corradi</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>catkin_simple</buildtool_depend>
+
+  <build_depend>roscpp</build_depend>
+  <build_depend>radar_msgs</build_depend>
+  <build_depend>radar_targets_msgs</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>nodelet</build_depend>
+
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>radar_msgs</exec_depend>
+  <exec_depend>radar_targets_msgs</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>nodelet</exec_depend>
+
+  <export>
+    <nodelet plugin="${prefix}/radar_server_nodelet.xml"/>
+  </export>
+</package>

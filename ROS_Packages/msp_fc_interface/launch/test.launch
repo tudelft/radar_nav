@@ -1,0 +1,5 @@
+<launch>
+
+    <node pkg="msp_fc_interface" type="msp_fc_interface" name="msp_fc_interface" output="screen" />
+    
+</launch>

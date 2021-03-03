@@ -1,0 +1,6 @@
+<launch>
+  <!-- radar driver -->
+  <node name="radar_ros_driver" pkg="radar_ros_driver" type="radar_ros_driver" output="screen" />
+  <!-- radar server -->
+  <node name="radar_server" pkg="radar_server" type="radar_server"></node>
+</launch>

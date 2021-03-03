@@ -1,0 +1,7 @@
+<library path="lib/libradar_ros_driver_nodelet">
+  <class name="radar_ros_driver/RadarRosDriverNodelet" type="radar_ros_driver::RadarRosDriverNodelet" base_class_type="nodelet::Nodelet">
+    <description>
+      A nodelet wrapper for the radar_ros_driver.
+    </description>
+  </class>
+</library>

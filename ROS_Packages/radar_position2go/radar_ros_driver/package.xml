@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>radar_ros_driver</name>
+  <version>0.0.1</version>
+  <description>The radar_ros_driver package</description>
+  <maintainer email="j.j.g.dupeyroux@tudelft.nl">Julien Dupeyroux</maintainer>
+  <maintainer email="federico.corradi@imec.nl">Federico Corradi</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>catkin_simple</buildtool_depend>
+
+  <depend>roscpp</depend>
+  <depend>radar_msgs</depend>
+  <depend>radar_avoid_msgs</depend>
+  <depend>radar_targets_msgs</depend>
+  <depend>rc_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>nodelet</depend>
+
+  <export>
+    <nodelet plugin="${prefix}/radar_ros_driver_nodelet.xml"/>
+  </export>
+
+</package>

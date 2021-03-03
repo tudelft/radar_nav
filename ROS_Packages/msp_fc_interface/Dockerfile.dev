@@ -1,0 +1,29 @@
+from ros:melodic
+
+ENV ROS_WORKSPACE_PATH=/root/catkin_ws
+ENV ROS_PACKAGE_NAME=msp_fc_driver
+
+# Install dependencies
+RUN apt update -y && apt install -y \
+    build-essential \
+    python-catkin-pkg \
+    python-catkin-tools \
+    ros-melodic-mav-msgs \
+    python-serial
+
+# Setup catkin
+RUN mkdir -p $ROS_WORKSPACE_PATH/src && \
+    cd $ROS_WORKSPACE_PATH && \
+    catkin init && \
+    catkin config --extend /opt/ros/melodic/ && \
+    echo "source $ROS_WORKSPACE_PATH/devel/setup.bash" >> ~/.bashrc && \
+    /bin/bash -c "source ~/.bashrc"
+
+# Install useful tools
+RUN apt install -y tmux
+
+# Configure tools
+RUN echo "set -g mouse on" >> ~/.tmux.conf && \
+    echo "bind -n WheelUpPane if-shell -F -t = \"#{mouse_any_flag}\" \"send-keys -M\" \"if -Ft= '#{pane_in_mode}' 'send-keys -M' 'copy-mode -e'\"" >> ~/.tmux.conf
+
+WORKDIR $ROS_WORKSPACE_PATH/src

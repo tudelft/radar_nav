@@ -1,0 +1,15 @@
+<launch>
+    <!-- camera driver -->
+    <node name="davis_ros_driver" pkg="davis_ros_driver" type="davis_ros_driver" output="screen" />
+    
+    <node pkg="msp_fc_interface" type="msp_fc_interface" name="msp_fc_interface" output="screen" />
+    <node pkg="foe_estimator" type="foe_estimator" name="foe_estimator" output="screen" />
+    <node pkg="object_detection" type="object_detection" name="object_detection" output="screen" />
+
+
+    <node name="dvs_of" pkg="dvs_of" type="dvs_of">
+     <remap from="events" to="/dvs/events"/>
+     <remap from="camera_info" to="/dvs/camera_info"/>
+     <remap from="imu" to="/dvs/imu"/>
+    </node>   
+</launch>
